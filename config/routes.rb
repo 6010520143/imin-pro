@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]  
   
   get 'signup', to: 'users#new', as: 'signup'
-  get 'login', to: 'sessions#new', as: 'login'
-  get 'logout', to: 'sessions#destroy', as: 'logout'
+  get 'signin', to: 'sessions#new', as: 'signin'
+  get 'edit', to: 'users#edit', as: 'edit'
+  get 'signout', to: 'sessions#destroy', as: 'signout'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'links#index'
 end
